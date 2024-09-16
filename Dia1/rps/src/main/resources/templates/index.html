@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Piedra, Papel o Tijeras</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <h1>Piedra, Papel o Tijeras</h1>
+    <form action="/play" method="get">
+        <label>Escoge tu jugada:</label>
+        <select name="choice">
+            <option value="Piedra">Piedra</option>
+            <option value="Papel">Papel</option>
+            <option value="Tijeras">Tijeras</option>
+        </select>
+        <button type="submit">Jugar</button>
+    </form>
+
+    <div th:if="${userChoice}">
+        <p>Tu elección: <span th:text="${userChoice}"></span></p>
+        <p>Elección de la computadora: <span th:text="${computerChoice}"></span></p>
+        <p>Resultado: <span th:text="${result}"></span></p>
+    </div>
+</body>
+</html>
